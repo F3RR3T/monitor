@@ -13,6 +13,7 @@ else
 fi
 
 
+# read a whole file line by line
 #i=0
 #while read line
 #do
@@ -35,4 +36,4 @@ lastip=$(echo $lastline | awk '{ print $2 }')
 
 echo "Last = $lastip"
 
-[ "$lastip" = "$firstip" ] && echo 'match' || echo 'different'
+[ "$lastip" == "$firstip" ] && echo 'match' || echo 'different'
