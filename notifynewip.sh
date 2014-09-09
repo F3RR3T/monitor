@@ -25,6 +25,7 @@ EOF
 
 uptime >> emailbody.txt
 
-cat emailbody.txt | mail -A cumquat -s "IP has changed" st33v@st33v.com
+cat emailbody.txt | mail -A cumquat -s "IP has changed" $EMAILST33V
+rm emailbody.txt
 
 
