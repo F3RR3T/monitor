@@ -31,6 +31,6 @@ cat <<- EOF > data/emailbody.txt
 EOF
 
 sleep 180  # wait 3 mins to make sure have network
-cat data/emailbody.txt | mail -A cumquat -s "Cumquat reboot notification" $EMAILST33V
+cat data/emailbody.txt | mail -A cumquat -s "Cumquat: reboot notification" $EMAILST33V
 rm data/emailbody.txt
 rm data/heartlock

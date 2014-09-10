@@ -10,22 +10,16 @@ cat <<- EOF > emailbody.txt
 	Notification of changed IP address
 	==================================
 
-	The IP address of cumquat has changed.
-
 	Old IP and date of recording:
-EOF
+	$(cat data/tmp.*)
 
-cat data/tmp.* >> emailbody.txt
-
-cat <<- EOF >> emailbody.txt
 	New IP:  $ip
 	Date  :  $dt
-	
+	users :  $(w)
 EOF
 
-uptime >> emailbody.txt
 
-cat emailbody.txt | mail -A cumquat -s "IP has changed" $EMAILST33V
+cat emailbody.txt | mail -A cumquat -s "Cumquat: IP has changed" $EMAILST33V
 rm emailbody.txt
 
 
